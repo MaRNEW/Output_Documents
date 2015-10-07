@@ -1,5 +1,5 @@
-## 6077 Mail Discussion
-A summary of the points in the 6077 mail discussion, will rename later.
+## MaRNEW Mail Discussion: Open Research Issues in Internet Congestion Control
+Over the course of the [MaRNEW](https://iab.org/workshops/marnew) Workshop there was a discussion on the [MaRNEW Mailing List](mailto:marnew@iab.org) about internet congestion control, sharing of data and new possible solutions. 
 
 Many basic approaches in CC related to RTT or loss are skewed by radio network characteristics and start to break down
 
@@ -82,6 +82,18 @@ The discussion on the [MaRNEW Mailing List](mailto:marnew@iab.org) identified th
 The MaRNEW mailing list discussion highlighted some solutions which exist currently.
 
 * Android's [requestBandwidthUpdate](http://developer.android.com/reference/android/net/ConnectivityManager.html#requestBandwidthUpdate) is coming up in Android M as an API of exposing available capacity on the radio downlink 
+* (Pacing) Will even the beest possible signal coming from the RAN be effectively used by a TCP sender? 
+  * In LTE it's probably latency variability that impacts the most TCP.  Even with zero packet loss rate thanks to link adaptation, poor ACK clocking caused by the latency would augment TCP burstiness.  This can bring buffer losses that could be avoided by simply pacing TCP on the sender side.
+    * It may be counter-intuitive but link adaptation could help avoid channel losses,  augment latency variability causes buffer losses. 
+    * Pacing is hard to implement but can be simpler than closed loop protocols based on complex feedback. 
+    * Also TCP pacing over LTE would not suffer from the known fairness issues as buffers for different UEs aren't shared in the tower. 
+    * No-one believed pacing is being used at a TCP layer, but RSSI and other signal parameters such as RSSI/RSRP are being used for interface/network selection or in connection manager type applications. 
+* (Heuristics) From an application point of view, parameters such as Jitter, Latency and Delay parameters (based on some explicit measurements) on an access link are used to some extent; if it is then this may be a proprietary art and there may be good amount of heuristics involved in such calculations.
+* (Signal Strength Parameters) Some popular end-points do make use of signal strength parameters, not at the application level but for network selection; such as performing an handover between two access points, when the RSSI differential between those adjacent AP’s is below a certain threshold, or a mobile router's selection of an egress link (LTE or Wi-Fi) based on these parameters. 
+* (Channel Quality Indicator) A recent paper from Andreas (Google) and UCSD folks proposed a [channel quality indicator (CQI)](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43311.pdf) based cross-layer congestion control for cellular networks. 
+  * TCP pacing with rate inferred from the feedback. Pacing is implemented usingtoken bucket rate limitation. 
+  * Performance could be good by just pacing at the Ack clock rate. This is not explored in this paper but if so the implementation would not require any feedback from the RAN. 
+* CDN metadata exchange idea where a CDN and content provider exchanges metadata for radio network information.
 
 
 ### References
