@@ -34,14 +34,14 @@ The [6077] document askes a number of open research questions, some relevant to 
 #### Research Need Identified on the MaRNEW Mailing List
 The [MaRNEW Mailing List](mailto:marnew@iab.org) discussion also focused on the need for data, it briefly looked into what data is needed and at what scale. 
 
-#### Attempts to Gather Data, and Issues with this. 
-##### Attempts to Gather Data
+### Attempts and Issues with Gathering Data
+#### Attempts to Gather Data
 These attempts at gathering data were mentioned on the [MaRNEW Mailing List](mailto:marnew@iab.org) discussion:
 
 * Facebook have asked a couple of vendors for congestion hints in a variety of ways, with no real response.
 * 
 
-##### Issues with Gathering Data
+#### Issues with Gathering Data
 Some vendors and operators sited issues with gathering data, these are listed below:
 
 * Someone mentioned congestion control hints from the mobile network would be "too ephemeral and dynamic to be useful" (e.g. someone turns on a microwave oven and congestion becomes high)
