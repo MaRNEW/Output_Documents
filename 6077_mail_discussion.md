@@ -1,8 +1,6 @@
 ## MaRNEW Mail Discussion: Open Research Issues in Internet Congestion Control
 Over the course of the [MaRNEW](https://iab.org/workshops/marnew) Workshop there was a discussion on the [MaRNEW Mailing List](mailto:marnew@iab.org) about internet congestion control, sharing of data and new possible solutions. 
 
-Many basic approaches in CC related to RTT or loss are skewed by radio network characteristics and start to break down
-
 ### RFC 6077: Open Research Issues in Internet Congestion Control [RFC6077]
 The document describes some of the open problems in Internet congestion control that are known today.  This includes several new challenges that are becoming important as the network grows, as well as some issues that have been known for many years.  These challenges are generally considered to be open research topics that may require more study or application of innovative techniques before Internet-scale solutions can be confidently engineered and deployed.
 
@@ -46,12 +44,6 @@ Within the MaRNEW Discussion these data were requsted or noted to be useful in t
 * Bandwidth is necessary, but not sufficient, for fully understanding underlying network characteristics.
 * Knowing the RRC state. If an endpoint knows it's in IDLE, DCH, FACH, etc it can make better decisions. 
 
-#### Attempts to Gather Data
-These attempts at gathering data were mentioned on the [MaRNEW Mailing List](mailto:marnew@iab.org) discussion:
-
-* Facebook have asked a couple of vendors for congestion hints in a variety of ways, with no real response.
-* 
-
 #### Issues with Gathering Data
 Some vendors and operators sited issues with gathering data, these are listed below:
 
@@ -68,6 +60,7 @@ Some vendors and operators sited issues with gathering data, these are listed be
   * If I sell it to one content providers, do I need to sell it to another too to save on anti-trust issues?
   * Can my competitor or customers get this information and use it against me (e.g. here is map of where your network is poor during rush hour)?
   * Can my suppliers get this information and use it against me?
+  * Facebook have asked a couple of vendors for congestion hints in a variety of ways, with no real response.
 
 
 ### Warnings and Requirements
@@ -77,6 +70,7 @@ The discussion on the [MaRNEW Mailing List](mailto:marnew@iab.org) identified th
 * Info pertaining to the cell (or cell cluster) as a whole may be best managed at the RRC, the dedicated radio resource controller within 3GPP networks. 
 * There is usually a lag between changing conditions in a cell and the UE detecting reduced/increased bandwidth
 * New solutions will need to work across network types
+* Many basic approaches in CC related to RTT or loss are skewed by radio network characteristics and start to break down.
 
 ### Existing Solutions
 The MaRNEW mailing list discussion highlighted some solutions which exist currently.
