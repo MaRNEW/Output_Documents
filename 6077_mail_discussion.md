@@ -1,7 +1,7 @@
 ## MaRNEW Mail Discussion: Open Research Issues in Internet Congestion Control
-Over the course of the [MaRNEW](https://iab.org/workshops/marnew) Workshop there was a discussion on the [MaRNEW Mailing List](mailto:marnew@iab.org) about internet congestion control, sharing of data and new possible solutions. 
+Over the course of the [MaRNEW](https://iab.org/workshops/marnew) Workshop there was a discussion on the [MaRNEW Mailing List](mailto:marnew@iab.org) about internet congestion control, sharing of data and new possible solutions. This list was difficult to navigate and draw conclusions from, so this document amalgamates the comments in an attempt to aid research and discussions going forward.
 
-### RFC 6077: Open Research Issues in Internet Congestion Control [RFC6077]
+### RFC 6077: Open Research Issues in Internet Congestion Control, An Overview
 The document describes some of the open problems in Internet congestion control that are known today.  This includes several new challenges that are becoming important as the network grows, as well as some issues that have been known for many years.  These challenges are generally considered to be open research topics that may require more study or application of innovative techniques before Internet-scale solutions can be confidently engineered and deployed.
 
 Readers are encouraged to read the whole document. For the purposes of MaRNEW the document details a number of key points for managing networks and congestion control. Some of these points are given below:
