@@ -17,19 +17,41 @@ Readers are encouraged to read the whole document. For the purposes of MaRNEW th
 * The document warns that "self-restraint" could be removed from the internet, so developers/users may not be a reliable party in controlling congestion control. 
 * Middleboxes are also mentioned as having the aim of improving the performance of applications, but "the implications of such mechanisms, which are often proprietary and not documented, have not been studied systematically so far".
 
-The document lists some information (data) that could help improve congestion control across networks and infrasturture. Those relevant to MaRNEW and focused on (or covering) mobile networks include:
+### Needed Research
+#### Research Need Identified in 6077
+The [6077] document lists some information (data) that could help improve congestion control across networks and infrasturture. Those relevant to MaRNEW and focused on (or covering) mobile networks include:
   1. Capacity of (outgoing) links
   2. Traffic carried over (outgoing) links
   3. Internal buffer statistics
 
 Readers should refer to the main document for descriptions of each.
 
-The document askes a number of open research questions, some relevant to MaRNEW are:
+The [6077] document askes a number of open research questions, some relevant to MaRNEW are:
 * "How much can network elements theoretically improve performance in the complete range of communication scenarios that exist in the Internet without damaging or impacting end-to-end mechanisms already in place?"
 * "Is it possible to design robust congestion control mechanisms that offer significant benefits with minimum additional risks, even if Internet traffic patterns will change in the future?"
 * What is the minimum support that is needed from the network in order to achieve significantly better performance than with end-to-end mechanisms and the current IP header limitations that provide at most unary ECN signals?
 
+#### Research Need Identified on the MaRNEW Mailing List
+The [MaRNEW Mailing List](mailto:marnew@iab.org) discussion also focused on the need for data, it briefly looked into what data is needed and at what scale. 
 
+#### Attempts to Gather Data, and Issues with this. 
+##### Attempts to Gather Data
+These attempts at gathering data were mentioned on the [MaRNEW Mailing List](mailto:marnew@iab.org) discussion:
+
+* Facebook have asked a couple of vendors for congestion hints in a variety of ways, with no real response.
+* 
+
+##### Issues with Gathering Data
+Some vendors and operators sited issues with gathering data, these are listed below:
+
+* Someone mentioned congestion control hints from the mobile network would be "too ephemeral and dynamic to be useful" (e.g. someone turns on a microwave oven and congestion becomes high)
+
+This just seems to be more signalling without actionable information. I belive tcp already provides these hints 
+
+### Warnings and Requirements
+The discussion on the [MaRNEW Mailing List](mailto:marnew@iab.org) identified the following warnings or requirements for evolved congestion control work.
+
+* Need to make sure that such efforts do not merely shift the bottleneck to cause problems elsewhere
 
 
 
@@ -42,4 +64,4 @@ The document askes a number of open research questions, some relevant to MaRNEW 
 
 
 
-[MaRNEW Mailing List](mailto:marnew@iab.org) 
+
