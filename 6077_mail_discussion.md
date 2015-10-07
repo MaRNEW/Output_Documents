@@ -1,6 +1,8 @@
 ## 6077 Mail Discussion
 A summary of the points in the 6077 mail discussion, will rename later.
 
+Many basic approaches in CC related to RTT or loss are skewed by radio network characteristics and start to break down
+
 ## RFC 6077: Open Research Issues in Internet Congestion Control [RFC6077]
 The document describes some of the open problems in Internet congestion control that are known today.  This includes several new challenges that are becoming important as the network grows, as well as some issues that have been known for many years.  These challenges are generally considered to be open research topics that may require more study or application of innovative techniques before Internet-scale solutions can be confidently engineered and deployed.
 
@@ -34,7 +36,16 @@ The [6077] document askes a number of open research questions, some relevant to 
 #### Research Need Identified on the MaRNEW Mailing List
 The [MaRNEW Mailing List](mailto:marnew@iab.org) discussion also focused on the need for data, it briefly looked into what data is needed and at what scale. 
 
-### Attempts and Issues with Gathering Data
+### Gathering Data
+#### Desired Data to Collect
+Within the MaRNEW Discussion these data were requsted or noted to be useful in the investigation of the effectiveness or need for network management elements or to make dynamic decisions at the application level.
+
+* Channel bandwidth (at base station)
+* Allocated channels vs available channels (at base station)
+* Data across use cases (e.g. use case of someone using their phone at home, then in the car, and then in the office)
+* Bandwidth is necessary, but not sufficient, for fully understanding underlying network characteristics.
+* Knowing the RRC state. If an endpoint knows it's in IDLE, DCH, FACH, etc it can make better decisions. 
+
 #### Attempts to Gather Data
 These attempts at gathering data were mentioned on the [MaRNEW Mailing List](mailto:marnew@iab.org) discussion:
 
@@ -45,15 +56,32 @@ These attempts at gathering data were mentioned on the [MaRNEW Mailing List](mai
 Some vendors and operators sited issues with gathering data, these are listed below:
 
 * Someone mentioned congestion control hints from the mobile network would be "too ephemeral and dynamic to be useful" (e.g. someone turns on a microwave oven and congestion becomes high)
+  * But there may be cases where the Android API can provide a coarse hint that is useful, and this would be worth testing.
+  * Ephemeral elements include: aggregate channel BW, per user BW, latency, ...  on time scales of 10-100's of ms and variations on the order of 50:1 or more (or less).  
+  * RAN vendors have been loath to expose this since its hard to predict accuracy and easy to make bad decisions based on ever changing data.   
+  * Over a larger time scale (say many seconds / minutes), you can conclude some level of overall aggregate channel conditions. In aggregate, you can conclude that there are problems and some mitigation of traffic for certain classes of users could result in an aggregate improvement in QoE.  
+  * It would be good to divorce traffic management methods, from the dependence on traffic type detection mechanisms.
+  * Each specific user still may see a wide variation of performance since they may be in very good signal-to-noise areas (getting a higher share of BW) or very bad signal-to-noise areas (getting a very low BW).  
+* Data received may be out of date as soon at the endpoint receives it.
+* Someone mentioned "No Operator would share that kind of information from their base station", although some content providers said they have managed to work with operators and exchange data successfully. Operators may need to consider the following before sharing data
+  * Is this info free or paid for (NN issue)?
+  * If I sell it to one content providers, do I need to sell it to another too to save on anti-trust issues?
+  * Can my competitor or customers get this information and use it against me (e.g. here is map of where your network is poor during rush hour)?
+  * Can my suppliers get this information and use it against me?
 
-This just seems to be more signalling without actionable information. I belive tcp already provides these hints 
 
 ### Warnings and Requirements
 The discussion on the [MaRNEW Mailing List](mailto:marnew@iab.org) identified the following warnings or requirements for evolved congestion control work.
 
 * Need to make sure that such efforts do not merely shift the bottleneck to cause problems elsewhere
+* Info pertaining to the cell (or cell cluster) as a whole may be best managed at the RRC, the dedicated radio resource controller within 3GPP networks. 
+* There is usually a lag between changing conditions in a cell and the UE detecting reduced/increased bandwidth
+* New solutions will need to work across network types
 
+### Existing Solutions
+The MaRNEW mailing list discussion highlighted some solutions which exist currently.
 
+* Android's [requestBandwidthUpdate](http://developer.android.com/reference/android/net/ConnectivityManager.html#requestBandwidthUpdate) is coming up in Android M as an API of exposing available capacity on the radio downlink 
 
 
 ### References
