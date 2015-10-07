@@ -31,9 +31,6 @@ The [6077] document askes a number of open research questions, some relevant to 
 * "Is it possible to design robust congestion control mechanisms that offer significant benefits with minimum additional risks, even if Internet traffic patterns will change in the future?"
 * What is the minimum support that is needed from the network in order to achieve significantly better performance than with end-to-end mechanisms and the current IP header limitations that provide at most unary ECN signals?
 
-#### Research Need Identified on the MaRNEW Mailing List
-The [MaRNEW Mailing List](mailto:marnew@iab.org) discussion also focused on the need for data, it briefly looked into what data is needed and at what scale. 
-
 ### Gathering Data
 #### Desired Data to Collect
 Within the MaRNEW Discussion these data were requsted or noted to be useful in the investigation of the effectiveness or need for network management elements or to make dynamic decisions at the application level.
