@@ -22,17 +22,18 @@ Ideas generated from the workshop are included here, this list is still being ad
 * Heuristics (for best effort only?)
 * CDNs / caches in the network
 * CDN improvements
-* Mobile Throughput Guidance
-* One bit for latency bandwidth tradeoff
+* __Mobile Throughput Guidance__
+* __Zero / One bit for latency bandwidth tradeoff__
 * Small amount of data from network to user (ECN)
 * API for app to query network, or vice versa
-* Blind Caching
+* __Blind Caching__
 * Standard approach for operator to offer services to Content Providers
-* Better Collaboration
+* __Better Collaboration__
 * Sharing information hop by hop
-* Metrics and metric standards
+* __Metrics and metric standards__
 * Testing / Debugging
 * Trust model / framework (e.g. for spud)
 * Keyless SSL
 * Meaningful capacity sharing; reacting correctly to wireless link layer condition
+* 5G
 
